@@ -1,41 +1,41 @@
 *** Settings ***
 Library   SeleniumLibrary
 
+
 *** Variables ***
 
 ${BROWSER}      firefox
-${URL}          http://www.buscacep.correios.com.br/
+${URL}          https://buscacepinter.correios.com.br/app/endereco/index.php
 
 *** keywords ***
-Open navigator
+Abrir navegador
     Open Browser    about:blank   ${BROWSER}
 
-Close navigator
+Fechar navegador
     Close Browser
 
 ###Passo a passo
-Dado que eu estou na pagina home do site
-    Go To       http://www.buscacep.correios.com.br/
-    Title Should Be    Correios: encomendas, rastreamento, telegramas, cep, cartas, selos, agências e mais!
+Dado que eu estou na pagina de inicial do site
+    Go To       https://buscacepinter.correios.com.br/app/endereco/index.php
 
-E o usuario clica em "Busca CEP"
-    Click Element    xpath=/html/body/div[1]/div[3]/div[2]/div[1]/div/div[2]/div[2]/ul[1]/li[11]/a
 
-E digita o CEP que deseja pesquisar
+E digito o CEP do endereco "69005040"
     Input Text    id=endereco     69005040
 
-Quando o usuario buscar o CEP
-    click Element       id=btn_pesquisar  
+Quando a pagina for redirecionada
+  click Element       id=btn_pesquisar
+
+Entao o endereco deve ser exibido com sucesso 
+  wait until Element is visible        xpath=/html/body/main/form/div[1]/div[2]/div/div[3]/table/tbody/tr/td[2]
+
+E digito o nome do endereco que desejo pesquisar 
+   Input Text    id=endereco    Lojas Bemol    
+
+Quando a pagina de busca for redirecionada
+   click Element       id=btn_pesquisar
 
 Entao o endereco sera exibido com sucesso
-    wait until Element is visible       css=#mensagem-resultado > h4
+  wait until Element is visible        css=html body main form div#painel_form_consulta.container div.ctn-tabela div#resultado.dados div table#resultado-DNEC.th-fixo.cards.mob tbody tr td a
+
+
    
-E digita o nome que deseja pesquisar
-   Input Text    id=endereco    Lojas Bemol
-
-Quando o usuario buscar o nome
-        click Element       id=btn_pesquisar  
-
-Entao o endereco sera exibido com sucesso
-    Click Element           xpath=//*[@id="resultado-DNEC"]/tbody/tr/td[1]/a       
-    wait until Element is visible       css=#detalhes-cep-modal > section > header > h1
