@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20210106 19:18:06.870" generator="Robot 3.2.2 (Python 2.7.17 on linux2)">
+<suite source="/home/raiany-silva/Downloads/ui-master/features/UI.robot" id="s1" name="UI">
+<test id="s1-t1" name="Cenario 01: Realizar busca de endereco por CEP">
+<kw type="setup" name="Abrir navegador" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210106 19:18:06.999" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<msg timestamp="20210106 19:18:07.000" level="INFO">Firefox driver log is always forced to to: /home/raiany-silva/Downloads/ui-master/features/results/geckodriver-1.log</msg>
+<status status="PASS" endtime="20210106 19:18:09.185" starttime="20210106 19:18:06.998"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:09.185" starttime="20210106 19:18:06.996"></status>
+</kw>
+<kw name="Dado que eu estou na pagina de inicial do site" library="Resource">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>https://buscacepinter.correios.com.br/app/endereco/index.php</arg>
+</arguments>
+<msg timestamp="20210106 19:18:09.186" level="INFO">Opening url 'https://buscacepinter.correios.com.br/app/endereco/index.php'</msg>
+<status status="PASS" endtime="20210106 19:18:11.698" starttime="20210106 19:18:09.186"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:11.698" starttime="20210106 19:18:09.186"></status>
+</kw>
+<kw name="E digito o CEP do endereco &quot;69005040&quot;" library="Resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=endereco</arg>
+<arg>69005040</arg>
+</arguments>
+<msg timestamp="20210106 19:18:11.698" level="INFO">Typing text '69005040' into text field 'id=endereco'.</msg>
+<status status="PASS" endtime="20210106 19:18:11.750" starttime="20210106 19:18:11.698"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:11.750" starttime="20210106 19:18:11.698"></status>
+</kw>
+<kw name="Quando a pagina for redirecionada" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=btn_pesquisar</arg>
+</arguments>
+<msg timestamp="20210106 19:18:11.752" level="INFO">Clicking element 'id=btn_pesquisar'.</msg>
+<status status="PASS" endtime="20210106 19:18:11.992" starttime="20210106 19:18:11.751"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:11.992" starttime="20210106 19:18:11.751"></status>
+</kw>
+<kw name="Entao o endereco deve ser exibido com sucesso" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=/html/body/main/form/div[1]/div[2]/div/div[3]/table/tbody/tr/td[2]</arg>
+</arguments>
+<status status="PASS" endtime="20210106 19:18:12.014" starttime="20210106 19:18:11.993"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:12.014" starttime="20210106 19:18:11.993"></status>
+</kw>
+<kw type="teardown" name="Fechar navegador" library="Resource">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20210106 19:18:12.541" starttime="20210106 19:18:12.015"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:12.541" starttime="20210106 19:18:12.015"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:12.541" critical="yes" starttime="20210106 19:18:06.995"></status>
+</test>
+<test id="s1-t2" name="Cenario 02: Realizar busca de endereco por Nome">
+<kw type="setup" name="Abrir navegador" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210106 19:18:12.543" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<msg timestamp="20210106 19:18:12.543" level="INFO">Firefox driver log is always forced to to: /home/raiany-silva/Downloads/ui-master/features/results/geckodriver-2.log</msg>
+<status status="PASS" endtime="20210106 19:18:14.940" starttime="20210106 19:18:12.543"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:14.940" starttime="20210106 19:18:12.542"></status>
+</kw>
+<kw name="Dado que eu estou na pagina de inicial do site" library="Resource">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>https://buscacepinter.correios.com.br/app/endereco/index.php</arg>
+</arguments>
+<msg timestamp="20210106 19:18:14.942" level="INFO">Opening url 'https://buscacepinter.correios.com.br/app/endereco/index.php'</msg>
+<status status="PASS" endtime="20210106 19:18:18.171" starttime="20210106 19:18:14.942"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:18.171" starttime="20210106 19:18:14.941"></status>
+</kw>
+<kw name="E digito o nome do endereco que desejo pesquisar" library="Resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=endereco</arg>
+<arg>Lojas Bemol</arg>
+</arguments>
+<msg timestamp="20210106 19:18:18.171" level="INFO">Typing text 'Lojas Bemol' into text field 'id=endereco'.</msg>
+<status status="PASS" endtime="20210106 19:18:18.219" starttime="20210106 19:18:18.171"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:18.220" starttime="20210106 19:18:18.171"></status>
+</kw>
+<kw name="Quando a pagina de busca for redirecionada" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=btn_pesquisar</arg>
+</arguments>
+<msg timestamp="20210106 19:18:18.222" level="INFO">Clicking element 'id=btn_pesquisar'.</msg>
+<status status="PASS" endtime="20210106 19:18:18.460" starttime="20210106 19:18:18.222"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:18.460" starttime="20210106 19:18:18.220"></status>
+</kw>
+<kw name="Entao o endereco sera exibido com sucesso" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>css=html body main form div#painel_form_consulta.container div.ctn-tabela div#resultado.dados div table#resultado-DNEC.th-fixo.cards.mob tbody tr td a</arg>
+</arguments>
+<status status="PASS" endtime="20210106 19:18:18.683" starttime="20210106 19:18:18.460"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:18.684" starttime="20210106 19:18:18.460"></status>
+</kw>
+<kw type="teardown" name="Fechar navegador" library="Resource">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20210106 19:18:19.379" starttime="20210106 19:18:18.684"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:19.379" starttime="20210106 19:18:18.684"></status>
+</kw>
+<status status="PASS" endtime="20210106 19:18:19.379" critical="yes" starttime="20210106 19:18:12.542"></status>
+</test>
+<status status="PASS" endtime="20210106 19:18:19.381" starttime="20210106 19:18:06.871"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="UI" pass="2">UI</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
